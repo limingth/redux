@@ -1,8 +1,10 @@
-const todos = (state = [], action) => {
-  switch (action.type) {
+const f_alltodos = (mystate = [], action) => {
+  console.log(mystate)
+  console.log(action)
+  switch (action.type) { 
     case 'ADD_TODO':
       return [
-        ...state,
+        ...mystate,
         {
           id: action.id,
           text: action.text,
@@ -10,14 +12,25 @@ const todos = (state = [], action) => {
         }
       ]
     case 'TOGGLE_TODO':
-      return state.map(todo =>
+      return mystate.map(todo =>
         (todo.id === action.id)
           ? {...todo, completed: !todo.completed}
           : todo
       )
+    case 'DEL_TODO':
+      //return mystate.filter(todo => todo.id != action.id)
+      return mystate.map(todo =>
+        (todo.id === action.id)
+          ? {...todo, completed: !todo.completed}
+          : todo
+      )
+    case 'DEL_ALL_TODO':
+      console.log("reducers/todos", "DEL_ALL_TODO")
+      return []
     default:
-      return state
+      console.log('state is ', mystate)
+      return mystate
   }
 }
 
-export default todos
+export default f_alltodos

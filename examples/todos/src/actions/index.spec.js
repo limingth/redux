@@ -22,4 +22,11 @@ describe('todo actions', () => {
       id: 1
     })
   })
+
+    it('delTodo should create DEL_TODO action', () => {
+    expect(actions.delTodo(1)).toEqual({
+      type: 'DEL_TODO',
+      id: 1
+    })
+  })
 })

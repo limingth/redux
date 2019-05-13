@@ -1,6 +1,7 @@
 import { VisibilityFilters } from '../actions'
 
-const visibilityFilter = (state = VisibilityFilters.SHOW_ALL, action) => {
+const my_visibilityFilter = (state = VisibilityFilters.SHOW_ALL, action) => {
+  console.log("reducers visibilityFilter", {state}, {action})
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':
       return action.filter
@@ -9,4 +10,4 @@ const visibilityFilter = (state = VisibilityFilters.SHOW_ALL, action) => {
   }
 }
 
-export default visibilityFilter
+export default my_visibilityFilter

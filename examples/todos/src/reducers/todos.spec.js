@@ -8,6 +8,7 @@ describe('todos reducer', () => {
   })
 
   it('should handle ADD_TODO', () => {
+    console.log('handle add todos')
     expect(
       todos([], {
         type: 'ADD_TODO',
