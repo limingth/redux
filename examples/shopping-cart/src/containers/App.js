@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
+import OrderContainer from './OrderContainer'
 
 const App = () => (
   <div>
@@ -9,6 +10,8 @@ const App = () => (
     <ProductsContainer />
     <hr/>
     <CartContainer />
+    <hr/>
+    <OrderContainer />
   </div>
 )
 

@@ -5,9 +5,10 @@ const receiveProducts = products => ({
   type: types.RECEIVE_PRODUCTS,
   products
 })
-
+  
 export const getAllProducts = () => dispatch => {
   shop.getProducts(products => {
+    console.log('shop.getProducts', products)
     dispatch(receiveProducts(products))
   })
 }
@@ -18,9 +19,18 @@ const addToCartUnsafe = productId => ({
 })
 
 export const addToCart = productId => (dispatch, getState) => {
+  console.log('addToCart', productId)
   if (getState().products.byId[productId].inventory > 0) {
     dispatch(addToCartUnsafe(productId))
   }
+}
+
+export const del = productId => (dispatch, getState) => {
+  console.log('del', productId)
+  dispatch({
+    type: types.DEL_FROM_CART,
+    productId
+  })
 }
 
 export const checkout = products => (dispatch, getState) => {
