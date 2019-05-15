@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux'
 import { CHECKOUT_SUCCESS } from '../constants/ActionTypes'
 
 const orders = (state = [], action) => {

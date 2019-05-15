@@ -1,11 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getTotal, getCartProducts } from '../reducers'
-import Order from '../components/Order'
+import OrdersList from '../components/OrdersList'
 
 const OrderContainer = ({ orders, products }) => (
-  <Order
+  <OrdersList
     orders={orders}
     products={products}
   />
@@ -20,3 +18,4 @@ export default connect(
   mapStateToProps,
   { }
 )(OrderContainer)
+
